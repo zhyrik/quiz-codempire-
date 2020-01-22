@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Counter from './components/Counter'
+import QuizForm from './components/QuizForm.page'
 
 function App() {
   return (
     <div >
-      <Counter />
+      <QuizForm />
     </div>
   )
 }
