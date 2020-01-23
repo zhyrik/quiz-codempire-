@@ -1,0 +1,29 @@
+{
+  "quiz": [
+    {
+      "query": "some query lorem ipsum dolor kfjas kdjal? ",
+      "answer": "some",
+      "name": "first"
+    },
+    {
+      "query": "some query lorem ipsum dolor kfjas kdjal? ",
+      "answer": "some",
+      "name": "second"
+    },
+    {
+      "query": "some query lorem ipsum dolor kfjas kdjal? ",
+      "answer": "some",
+      "name": "three"
+    },
+    {
+      "query": "some query lorem ipsum dolor kfjas kdjal? ",
+      "answer": "some",
+      "name": "four"
+    },
+    {
+      "query": "some query lorem ipsum dolor kfjas kdjal? ",
+      "answer": "some",
+      "name": "fifth"
+    }
+  ]
+}
