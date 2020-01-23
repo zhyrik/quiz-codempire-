@@ -15,7 +15,7 @@ import {
   alertFlag } from '../store/selectors/quizForm.selectors'
 import Error from './Error'
 import Alert from './Alert'
-import SubmitButton from './SubmitButton'
+import AnswerButton from './AnswerButton'
 
 /**
  * functional react component for Quiz page
@@ -126,7 +126,7 @@ function QuizForm(props) {
           >
             Сбросить
           </Button>
-          <SubmitButton />
+          <AnswerButton />
         </Form>
       </StyledCard>
     )

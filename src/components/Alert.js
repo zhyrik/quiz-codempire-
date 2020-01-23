@@ -6,6 +6,7 @@ import { H1, CenterWrapper, FixedWrapper } from './styled'
 import { useDispatch } from 'react-redux'
 
 import { changeAlertFlag } from '../store/actions/quizForm.actions'
+import AnswerButton from './AnswerButton'
 
 /**
  * functional react component for Alert component
@@ -32,7 +33,7 @@ function Error() {
               Каждый не отвеченный ответ считается неправильным, Вы уверены что хотите продолжить?
             </Card.Text>
             <Button variant="primary" onClick={returnToQuiz}>НЕТ</Button>
-            <Button variant="secondary">ДА</Button>
+            <AnswerButton forse={true}>ДА</AnswerButton>
           </Card.Body>
         </Card>
       </CenterWrapper>

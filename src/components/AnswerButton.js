@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom"
 
 import { allAnswers } from '../store/selectors/quizForm.selectors'
 import {
@@ -12,19 +13,23 @@ import {
  * @param {*} props - props
  * @returns {JSX.Element} - react component
  */
-function SubmitButton() {
+function AnswerButton({ forse }) {
   const answers = useSelector(allAnswers)
   const dispatch = useDispatch()
+  let history = useHistory()
 
   // show modal window with alert
   function handleQuiz () {
+    if(forse) {
+      history.push('/result')
+    }
     if(answers) {
       const numberAnswers = Object.keys(answers)
       console.log(numberAnswers)
       if (numberAnswers.length < 5) {
         dispatch(changeAlertFlag())
       } else {
-
+        history.push('/result')
       }
     }
   }
@@ -36,4 +41,4 @@ function SubmitButton() {
   )
 }
 
-export default SubmitButton
+export default AnswerButton
