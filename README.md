@@ -2,7 +2,7 @@
 
 In the project directory, you can run:
 
-### run `yarn start` && `yarn server` || `yarn dev` to ran bouth
+### run `yarn start` && `yarn server` || `yarn dev` to run bouth
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
