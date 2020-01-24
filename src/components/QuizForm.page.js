@@ -18,6 +18,9 @@ import Alert from './Alert'
 import AnswerButton from './AnswerButton'
 
 import InputText from './inputs/InputText'
+import InputRadio from './inputs/InputRadio'
+import Select from './inputs/Select'
+import Checkbox from './inputs/Checkbox'
 
 /**
  * functional react component for Quiz page
@@ -57,72 +60,13 @@ function QuizForm(props) {
 
           <InputText quiz={quiz[0]} />
 
-          <Form.Group >
-            <Form.Label>{quiz[0].query}</Form.Label>
-            <Field
-              component={BootstrapInputHOC(Form.Control)}
-              type="text"
-              name={quiz[0].name}
-            />
-          </Form.Group>
+          <InputText quiz={quiz[1]} />
 
-          <Form.Group>
-            <Form.Label>{quiz[1].query}</Form.Label>
-            <Field
-              component={BootstrapInputHOC(Form.Control)}
-              type="text"
-              name={quiz[1].name}
-            />
-          </Form.Group>
+          <InputRadio quiz={quiz[2]} />
 
-          <Form.Group>
-            <Form.Label as="legend">
-              {quiz[0].query}
-            </Form.Label>
-            <Col sm={10}>
-              <Field
-                component={BootstrapInputHOC(Form.Check)}
-                type="radio"
-                name={quiz[2].name}
-                label="first radio"
-                value="1"
-              />
-              <Field
-                component={BootstrapInputHOC(Form.Check)}
-                type="radio"
-                name={quiz[2].name}
-                label="first radio"
-                value="2"
-              />
-              <Field
-                component={BootstrapInputHOC(Form.Check)}
-                type="radio"
-                name={quiz[2].name}
-                label="first radio"
-                value="3"
-              />
-            </Col>
-          </Form.Group>
+          <Select quiz={quiz[3]} />
 
-          <Form.Group controlId="exampleForm.ControlSelect1">
-            <Form.Label>{quiz[3].query}</Form.Label>
-            <Field
-                component={BootstrapSelectHOC(Form.Control)}
-                name={quiz[3].name}
-              />
-          </Form.Group>
-
-          <Form.Group controlId="formBasicCheckbox">
-            <Form.Label>{quiz[4].query}</Form.Label>
-            <Field
-              type="checkbox"
-              component={BootstrapInputHOC(Form.Check)}
-              value={1}
-              label="some lable"
-              name={quiz[4].name}
-              checked="true"
-            />
-          </Form.Group>
+          <Checkbox quiz={quiz[4]} />
 
           <Button 
             variant="secondary"
@@ -132,6 +76,7 @@ function QuizForm(props) {
             Сбросить
           </Button>
           <AnswerButton />
+
         </Form>
       </StyledCard>
     )

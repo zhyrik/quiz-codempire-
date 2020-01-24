@@ -5,27 +5,30 @@ import { Field } from 'redux-form'
 
 import { BootstrapInputHOC } from './Input.HOC'
 
+
 /**
- * functional react component for InputText component
+ * functional react component for Checkbox component
  * @function
-* @param {obj} quiz - query, answer, name - properties
+ * @param {obj} quiz - query, answer, name - properties
  * @returns {JSX.Element} - react component
  */
-function InputText({ quiz }) {
+function Checkbox({ quiz }) {
   return (
-    <Form.Group >
+    <Form.Group>
       <Form.Label>{quiz.query}</Form.Label>
       <Field
-        component={BootstrapInputHOC(Form.Control)}
-        type="text"
+        type="checkbox"
+        component={BootstrapInputHOC(Form.Check)}
+        value={1}
+        label="some lable"
         name={quiz.name}
       />
     </Form.Group>
   )
 }
 
-InputText.propTypes = {
+Checkbox.propTypes = {
   quiz: PropTypes.object.isRequired
 }
 
-export default InputText
+export default Checkbox
