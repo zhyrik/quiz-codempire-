@@ -4,7 +4,7 @@ import { Field, reduxForm,  } from 'redux-form'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { StyledCard } from './styled'
-import { BootstrapInputHOC, BootstrapSelectHOC } from './Input.HOC'
+import { BootstrapInputHOC, BootstrapSelectHOC } from './inputs/Input.HOC'
 import {
   getQuizs,
   changeAlertFlag } from '../store/actions/quizForm.actions'
@@ -16,6 +16,8 @@ import {
 import Error from './Error'
 import Alert from './Alert'
 import AnswerButton from './AnswerButton'
+
+import InputText from './inputs/InputText'
 
 /**
  * functional react component for Quiz page
@@ -32,7 +34,7 @@ function QuizForm(props) {
   const error = useSelector(errorFetching)
   const loading = useSelector(loadingQuiz)
   const flag = useSelector(alertFlag)
-  console.log('1')
+
 
   function handleSubmit() {
     dispatch(changeAlertFlag())
@@ -52,7 +54,10 @@ function QuizForm(props) {
     return (
       <StyledCard>
         <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formQuizOne">
+
+          <InputText quiz={quiz[0]} />
+
+          <Form.Group >
             <Form.Label>{quiz[0].query}</Form.Label>
             <Field
               component={BootstrapInputHOC(Form.Control)}
@@ -61,7 +66,7 @@ function QuizForm(props) {
             />
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label>{quiz[1].query}</Form.Label>
             <Field
               component={BootstrapInputHOC(Form.Control)}

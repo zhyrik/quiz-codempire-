@@ -36,3 +36,8 @@ export const returnStart = () => ({
 export const changeAlertFlag = () => ({
   type: action.QUIZ_ALERT_FLAG
 })
+
+export const setPoints = (payload) => ({
+  type: action.SET_POINTS,
+  payload
+})

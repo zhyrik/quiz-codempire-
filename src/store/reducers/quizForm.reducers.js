@@ -5,7 +5,8 @@ const initialState = {
   fetched: false,
   quiz: [],
   error: null,
-  alertFlag: false
+  alertFlag: false,
+  points: null
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -46,6 +47,12 @@ export default (state = initialState, { type, payload }) => {
     return {
       ...state,
       alertFlag: !state.alertFlag
+    }
+
+  case action.SET_POINTS:
+    return {
+      ...state,
+      points: payload
     }
 
   default:
