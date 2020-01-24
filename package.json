@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json",
+    "dev": "concurrently \"yarn start\" \"yarn server\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "check-prop-types": "^1.1.2",
+    "concurrently": "^5.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2"
   }
