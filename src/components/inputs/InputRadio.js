@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { Form, Col } from 'react-bootstrap'
 import { Field } from 'redux-form'
@@ -48,4 +48,4 @@ InputRadio.propTypes = {
   quiz: PropTypes.object.isRequired
 }
 
-export default InputRadio
+export default memo(InputRadio)

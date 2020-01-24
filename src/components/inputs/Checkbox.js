@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { Form } from 'react-bootstrap'
 import { Field } from 'redux-form'
@@ -13,6 +13,7 @@ import { BootstrapInputHOC } from './Input.HOC'
  * @returns {JSX.Element} - react component
  */
 function Checkbox({ quiz }) {
+  console.log('check')
   return (
     <Form.Group>
       <Form.Label>{quiz.query}</Form.Label>
@@ -31,4 +32,4 @@ Checkbox.propTypes = {
   quiz: PropTypes.object.isRequired
 }
 
-export default Checkbox
+export default memo(Checkbox)

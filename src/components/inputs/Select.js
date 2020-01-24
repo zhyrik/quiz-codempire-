@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { Form } from 'react-bootstrap'
 import { Field } from 'redux-form'
@@ -27,4 +27,4 @@ Select.propTypes = {
   quiz: PropTypes.object.isRequired
 }
 
-export default Select
+export default memo(Select)

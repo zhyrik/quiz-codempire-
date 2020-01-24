@@ -1,10 +1,9 @@
-import React, { useEffect, memo } from 'react'
-import { Button, Form, Col } from 'react-bootstrap'
+import React, { useEffect } from 'react'
+import { Button, Form } from 'react-bootstrap'
 import { Field, reduxForm,  } from 'redux-form'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { StyledCard } from './styled'
-import { BootstrapInputHOC, BootstrapSelectHOC } from './inputs/Input.HOC'
 import {
   getQuizs,
   changeAlertFlag } from '../store/actions/quizForm.actions'
@@ -68,6 +67,13 @@ function QuizForm(props) {
 
           <Checkbox quiz={quiz[4]} />
 
+          <Field
+            name="firstName"
+            component="input"
+            type="text"
+            defaultValue={quiz[0].answer}
+          />
+
           <Button 
             variant="secondary"
             disabled={pristine || submitting}
@@ -88,6 +94,6 @@ function QuizForm(props) {
 const WithReduxForm = reduxForm({
   // a unique name for the form
   form: 'answers'
-})(memo(QuizForm))
+})(QuizForm)
 
 export default WithReduxForm
