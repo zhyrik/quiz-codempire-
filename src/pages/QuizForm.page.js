@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { Button, Form } from 'react-bootstrap'
-import { Field, reduxForm,  } from 'redux-form'
+import { reduxForm,  } from 'redux-form'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { StyledCard } from './styled'
 import {
   getQuizs,
   changeAlertFlag } from '../store/actions/quizForm.actions'
@@ -12,24 +11,27 @@ import {
   errorFetching,
   loadingQuiz,
   alertFlag } from '../store/selectors/quizForm.selectors'
-import Error from './Error'
-import Alert from './Alert'
-import AnswerButton from './AnswerButton'
 
-import InputText from './inputs/InputText'
-import InputRadio from './inputs/InputRadio'
-import Select from './inputs/Select'
-import Checkbox from './inputs/Checkbox'
+import { StyledCard } from '../components/styled'
+import Error from '../components/Overlays/Error'
+import Alert from '../components/Overlays/Alert'
+import Loading from '../components/Overlays/Loading'
+import AnswerButton from '../components/AnswerButton'
+import InputText from '../components/inputs/InputText'
+import InputRadio from '../components/inputs/InputRadio'
+import Select from '../components/inputs/Select'
+import Checkbox from '../components/inputs/Checkbox'
 
 /**
  * functional react component for Quiz page
  * @function
- * @param {*} props - props
+ * @param {*} props - redux-form props
  * @returns {JSX.Element} - react component
  */
 let dispatch = null
 
 function QuizForm(props) {
+  console.log(localStorage)
   const { pristine, reset, submitting } = props
   dispatch = useDispatch()
   const quiz = useSelector(quizSelector)
@@ -49,7 +51,7 @@ function QuizForm(props) {
   if(error){
     return <Error>{error}</Error>
   } else if (loading) {
-    return <p>loading</p>
+    return <Loading />
   } else if (flag) {
     return <Alert />
   } else if(quiz.length > 1) {
@@ -66,13 +68,6 @@ function QuizForm(props) {
           <Select quiz={quiz[3]} />
 
           <Checkbox quiz={quiz[4]} />
-
-          <Field
-            name="firstName"
-            component="input"
-            type="text"
-            defaultValue={quiz[0].answer}
-          />
 
           <Button 
             variant="secondary"

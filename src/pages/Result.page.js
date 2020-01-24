@@ -3,7 +3,7 @@ import { Card, Button, ListGroupItem, ListGroup } from 'react-bootstrap'
 import { useHistory } from "react-router-dom"
 import { useSelector } from 'react-redux'
 
-import { H1, CenterWrapper } from './styled'
+import { H1, CenterWrapper } from '../components/styled'
 import { percentagePoints, quizSelector } from '../store/selectors/quizForm.selectors'
 
 /**

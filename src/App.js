@@ -6,8 +6,8 @@ import {
   Redirect
 } from "react-router-dom"
 
-import QuizForm from './components/QuizForm.page'
-import Result from './components/Result.page'
+import QuizForm from './pages/QuizForm.page'
+import Result from './pages/Result.page'
 
 function PrivateRoute({ children, ...rest }) {
   return (

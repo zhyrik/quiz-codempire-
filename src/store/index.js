@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import reduxThunk from 'redux-thunk'
+import { persistStore } from 'redux-persist'
 
 import rootReducer from './combineReducers'
 
@@ -21,3 +22,7 @@ export const store = createStore(
   rootReducer,
   enhancer
 )
+
+export const persistor = persistStore(store)
+
+export default {store, persistor}

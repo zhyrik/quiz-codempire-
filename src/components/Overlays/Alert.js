@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
-
-
-import { H1, CenterWrapper, FixedWrapper } from './styled'
 import { useDispatch } from 'react-redux'
 
-import { changeAlertFlag } from '../store/actions/quizForm.actions'
-import AnswerButton from './AnswerButton'
+
+import { H1, CenterWrapper, FixedWrapper } from '../styled'
+
+import { changeAlertFlag } from '../../store/actions/quizForm.actions'
+import AnswerButton from '../AnswerButton'
 
 /**
  * functional react component for Alert component
@@ -14,7 +14,10 @@ import AnswerButton from './AnswerButton'
  * @returns {JSX.Element} - react component
  */
 function Error() {
+
   const dispatch = useDispatch()
+
+  // hide Alert component (return to Quiz)
   function returnToQuiz (){
     dispatch(changeAlertFlag())
   }
@@ -24,6 +27,7 @@ function Error() {
       <CenterWrapper>
         <Card>
           <Card.Body>
+            
             <Card.Title>
               <H1 color="#f00">
                 Предупреждение
@@ -32,8 +36,10 @@ function Error() {
             <Card.Text>
               Каждый не отвеченный ответ считается неправильным, Вы уверены что хотите продолжить?
             </Card.Text>
+
             <Button variant="primary" onClick={returnToQuiz}>НЕТ</Button>
             <AnswerButton forse={true}>ДА</AnswerButton>
+
           </Card.Body>
         </Card>
       </CenterWrapper>
