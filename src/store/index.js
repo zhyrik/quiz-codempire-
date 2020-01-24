@@ -23,6 +23,7 @@ export const store = createStore(
   enhancer
 )
 
+// redux-persist (localStorage caching)
 export const persistor = persistStore(store)
 
 export default {store, persistor}

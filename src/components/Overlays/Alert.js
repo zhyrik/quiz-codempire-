@@ -2,9 +2,7 @@ import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 
-
 import { H1, CenterWrapper, FixedWrapper } from '../styled'
-
 import { changeAlertFlag } from '../../store/actions/quizForm.actions'
 import AnswerButton from '../AnswerButton'
 

@@ -13,7 +13,6 @@ import { BootstrapInputHOC } from './Input.HOC'
  * @returns {JSX.Element} - react component
  */
 function Checkbox({ quiz }) {
-  console.log('check')
   return (
     <Form.Group>
       <Form.Label>{quiz.query}</Form.Label>

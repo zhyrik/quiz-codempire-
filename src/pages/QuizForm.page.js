@@ -29,21 +29,21 @@ import Checkbox from '../components/inputs/Checkbox'
  * @returns {JSX.Element} - react component
  */
 let dispatch = null
-
 function QuizForm(props) {
-  console.log(localStorage)
   const { pristine, reset, submitting } = props
   dispatch = useDispatch()
+
   const quiz = useSelector(quizSelector)
   const error = useSelector(errorFetching)
   const loading = useSelector(loadingQuiz)
   const flag = useSelector(alertFlag)
 
-
+  // show alert window
   function handleSubmit() {
     dispatch(changeAlertFlag())
   }
 
+  // get quis from json-server
   useEffect(() => {
     dispatch(getQuizs())
   }, [])

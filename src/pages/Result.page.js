@@ -16,7 +16,6 @@ function Result() {
   const quizs = useSelector(quizSelector)
   let history = useHistory()
 
-  console.log(percent)
   return (
     <CenterWrapper>
       <Card>

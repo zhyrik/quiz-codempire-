@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
@@ -8,19 +9,22 @@ import { allAnswers, quizSelector } from '../store/selectors/quizForm.selectors'
 import {
   changeAlertFlag,
   setPoints } from '../store/actions/quizForm.actions'
+
 /**
- * functional react component for ...
+ * functional react component for AnswerButton
  * @function
- * @param {*} props - props
+ * @param {bool} forse - flag for button in Alert component
  * @returns {JSX.Element} - react component
  */
 function AnswerButton({ forse }) {
+
   const answers = useSelector(allAnswers)
   const quiz = useSelector(quizSelector)
   const dispatch = useDispatch()
   let history = useHistory()
 
-  function f() {
+  // calculate result points && go to Result page
+  function calculateResult() {
     let points = 0
     quiz.forEach(element => {
       const name = element.name
@@ -29,20 +33,20 @@ function AnswerButton({ forse }) {
       }
     })
     dispatch(setPoints(points))
+    history.push('/result')
   }
+
   // show modal window with alert || go to result page
   function handleQuiz () {
     if(forse) {
-      history.push('/result')
-      f()
+      calculateResult()
     }
     if(answers) {
       const numberAnswers = Object.keys(answers)
       if (numberAnswers.length < 5) {
         dispatch(changeAlertFlag())
       } else {
-        history.push('/result')
-        f()
+        calculateResult()
       }
     } else {
       dispatch(changeAlertFlag())
@@ -54,6 +58,10 @@ function AnswerButton({ forse }) {
       Ответить
     </Button>
   )
+}
+
+AnswerButton.propTypes = {
+  forse: PropTypes.bool.isRequired
 }
 
 export default AnswerButton

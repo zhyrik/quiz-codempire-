@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage'
 import counter from './ducks/counter'
 import quizFrom from './reducers/quizForm.reducers'
 
+// redux-persist config
 const rootPersistConfig = {
   key: 'root',
   storage: storage
