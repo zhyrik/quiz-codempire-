@@ -1,28 +1,28 @@
 {
   "quiz": [
     {
-      "query": "some query lorem ipsum dolor kfjas kdjal? ",
-      "answer": "some",
+      "query": "Самые высокие горы на Земле? ",
+      "answer": "Гималаи",
       "name": "first"
     },
     {
-      "query": "some query lorem ipsum dolor kfjas kdjal? ",
-      "answer": "some",
+      "query": "Самые высокие горы в Европе ",
+      "answer": "Альпы",
       "name": "second"
     },
     {
-      "query": "some query lorem ipsum dolor kfjas kdjal? ",
-      "answer": "some",
+      "query": "Сколько континентов на Земле?",
+      "answer": "6",
       "name": "three"
     },
     {
-      "query": "some query lorem ipsum dolor kfjas kdjal? ",
-      "answer": "some",
+      "query": "Земная ось расположена к плоскости орбиты под углом? ",
+      "answer": "66.5",
       "name": "four"
     },
     {
-      "query": "some query lorem ipsum dolor kfjas kdjal? ",
-      "answer": "some",
+      "query": "Земля шарообразная?",
+      "answer": "да",
       "name": "fifth"
     }
   ]

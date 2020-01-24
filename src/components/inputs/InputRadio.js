@@ -22,22 +22,22 @@ function InputRadio({ quiz }) {
           component={BootstrapInputHOC(Form.Check)}
           type="radio"
           name={quiz.name}
-          label="first radio"
-          value="1"
+          label="7"
+          value="7"
         />
         <Field
           component={BootstrapInputHOC(Form.Check)}
           type="radio"
           name={quiz.name}
-          label="first radio"
-          value="2"
+          label="6"
+          value="6"
         />
         <Field
           component={BootstrapInputHOC(Form.Check)}
           type="radio"
           name={quiz.name}
-          label="first radio"
-          value="3"
+          label="8"
+          value="8"
         />
       </Col>
     </Form.Group>

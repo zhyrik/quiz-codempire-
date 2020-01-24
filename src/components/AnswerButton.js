@@ -28,7 +28,11 @@ function AnswerButton({ forse }) {
     let points = 0
     quiz.forEach(element => {
       const name = element.name
-      if (answers[name] === element.answer) {
+      if (answers[name] && answers[name].toString().toLowerCase() === element.answer.toString().toLowerCase()) {
+        points += 1
+        console.log(element)
+      }
+      if (answers[name] === true) {
         points += 1
       }
     })
@@ -54,14 +58,14 @@ function AnswerButton({ forse }) {
   }
 
   return (
-    <Button variant="primary" type="button" onClick={handleQuiz} >
+    <Button variant="primary" type="button" onClick={handleQuiz} data-test="answer-button" >
       Ответить
     </Button>
   )
 }
 
 AnswerButton.propTypes = {
-  forse: PropTypes.bool.isRequired
+  forse: PropTypes.bool
 }
 
 export default AnswerButton

@@ -7,7 +7,7 @@ export const BootstrapInputHOC = (InputHOC) => ({input, meta, ...props}) => {
 export const BootstrapSelectHOC = (FormControlHOC) => ({input, ...props}) => (
   <FormControlHOC as="select" {...props} {...input}>
     <option />
-    <option value="ff0000">Red</option>
-    <option value="00ff00">Green</option>
-    <option value="0000ff">Blue</option>
+    <option value="90">90</option>
+    <option value="66.5">66.5</option>
+    <option value="55.5">55.5</option>
   </FormControlHOC>)

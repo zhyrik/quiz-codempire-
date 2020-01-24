@@ -29,7 +29,7 @@ function Result() {
 
           <ListGroup className="list-group-flush">
             {quizs.map(quiz => (
-              <ListGroupItem >
+              <ListGroupItem key={quiz.answer}>
                 <Card.Text>
                   {quiz.query}
                 </Card.Text>

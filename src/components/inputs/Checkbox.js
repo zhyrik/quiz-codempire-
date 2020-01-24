@@ -5,7 +5,6 @@ import { Field } from 'redux-form'
 
 import { BootstrapInputHOC } from './Input.HOC'
 
-
 /**
  * functional react component for Checkbox component
  * @function
@@ -14,13 +13,12 @@ import { BootstrapInputHOC } from './Input.HOC'
  */
 function Checkbox({ quiz }) {
   return (
-    <Form.Group>
+    <Form.Group data-test="checkbox-group">
       <Form.Label>{quiz.query}</Form.Label>
       <Field
         type="checkbox"
         component={BootstrapInputHOC(Form.Check)}
-        value={1}
-        label="some lable"
+        label="да"
         name={quiz.name}
       />
     </Form.Group>
